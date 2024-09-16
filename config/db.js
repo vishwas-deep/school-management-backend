@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
-require('dotenv').config(); // This loads environment variables from the .env file
+require('dotenv').config();
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URI, { // Use MONGO_URI from .env or environment variables
+    await mongoose.connect('mongodb+srv://mongo:mongo@school.uu31e.mongodb.net/?retryWrites=true&w=majority&appName=school', {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
@@ -15,3 +15,4 @@ const connectDB = async () => {
 };
 
 module.exports = connectDB;
+
